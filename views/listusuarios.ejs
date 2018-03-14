@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta http-equiv="content-type" content="text/html">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="Página baseada na documentação oficial do Bootstrap [https://getbootstrap.com/docs/4.0/examples/]">
+		<meta name="author" content="Fernando Gomes Jr, Lucas Moura, Moacir Freire e Danilo Sousa">
+    <meta name="theme-color" content="#ffffff">
+    <title><%= title %></title>
+
+    <link rel="stylesheet" href="/stylesheets/bootstrap.min.css">
+
+    <!-- Estilos personalizados -->
+		<link rel="stylesheet" href="/stylesheets/pricing.css">
+		<link rel="stylesheet" href="/stylesheets/dashboard.css">
+		<link rel="stylesheet" href="/stylesheets/form-validation.css">
+		<style type="text/css">/* Chart.js */
+		@-webkit-keyframes chartjs-render-animation{from{opacity:0.99}to{opacity:1}}@keyframes chartjs-render-animation{from{opacity:0.99}to{opacity:1}}.chartjs-render-monitor{-webkit-animation:chartjs-render-animation 0.001s;animation:chartjs-render-animation 0.001s;}</style></head>
+
+  </head>
+  <body>
+
+    <% include partials/menus.ejs %>
+
+		<div class="container">
+			<!-- Listagem de usuários -->
+      <div class="list-group">
+        <% listusuarios.forEach(function(user){ %>
+        <a href="/editusuario/<%= user._id %>" class="list-group-item list-group-item-action flex-column align-items-start">
+          <div class="d-flex w-100 justify-content-between">
+            <h5 class="mb-1"><%= user.nome %></h5>
+            <small><%= user.patente %></small>
+          </div>
+          <p class="mb-1 address"><%= user.endereco%>, <%= user.numero%>
+          <br><%= user.bairro %>   -   <%= user.cidade %>-<%= user.estado %></p>
+          <p class="mb-1"><%= user.email %>       <%= user.telefone %></p>
+          <small><strong><%= user.usuario %>:</strong> exerce a função de <%= user.funcao %></small>
+        </a>
+
+        <% }) %>
+      </div>
+
+		  <footer class="footer_fixed">
+					<div class="row">
+					  <div class="col-12 col-md">
+							<small class="">© 2017-2018</small>
+					  </div>
+					</div>
+		  </footer>
+
+		</div>	<!--Fim do container -->
+
+			<!-- Bootstrap core JavaScript
+		================================================== -->
+		<!-- Placed at the end of the document so the pages load faster -->
+
+		<script src="javascripts/jquery-3.2.1.slim.min.js" type="text/javascript" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+		<script>window.jQuery || document.write('<script src="../../../../assets/js/vendor/jquery-slim.min.js"><\/script>')</script>
+
+
+    <script src="javascripts/popper.min.js" type="text/javascript"></script>
+    <script src="javascripts/bootstrap.min.js" type="text/javascript"></script>
+    <script src="javascripts/holder.min.js"></script>
+		<script>
+			// Example starter JavaScript for disabling form submissions if there are invalid fields
+			(function() {
+				'use strict';
+
+				window.addEventListener('load', function() {
+					// Fetch all the forms we want to apply custom Bootstrap validation styles to
+					var forms = document.getElementsByClassName('needs-validation');
+
+					// Loop over them and prevent submission
+					var validation = Array.prototype.filter.call(forms, function(form) {
+						form.addEventListener('submit', function(event) {
+							if (form.checkValidity() === false) {
+								event.preventDefault();
+								event.stopPropagation();
+							}
+							form.classList.add('was-validated');
+						}, false);
+					});
+				}, false);
+			})();
+		</script>
+
+
+
+  </body>
+</html>

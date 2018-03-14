@@ -1,0 +1,123 @@
+*{
+    margin: 0;
+}
+
+body{
+    font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+    width: 85%;
+    margin: 0 auto;
+}
+
+img{
+    max-width: 100%;
+}
+
+p{
+    text-align: justify;
+}
+
+header{
+    padding: 0.5em;
+}
+
+header, nav a, ul li, .logo, .logotipo{
+    display: inline-block;
+    vertical-align: center;
+    align-content: center;
+}
+
+nav{
+    min-height: 60px;
+    background: orange;
+    margin: 1em -1em;
+    padding: 0.1em 0;
+}
+
+nav ul li{
+    padding: 0 2em 0 0;
+    font-size: 1.3em;
+    border-right: 0.1em solid #fff;
+}
+
+nav ul li:last-child{
+    border-right: none;
+}
+
+nav a{
+    text-decoration: none;
+    color: #fff;
+    vertical-align: center;
+}
+
+nav a:hover{
+    text-decoration: underline;
+}
+
+.logo{
+    width: 40%;
+}
+
+.logotipo{
+    width: 45%;
+    padding: 1em 0;
+    text-align: right;
+}
+
+main{
+    margin: 0.3em;
+    padding: 0.25em;
+}
+
+section, article{
+    display: inline-block;
+    vertical-align: top;
+}
+
+section{
+    width: 100%;
+    margin: 0 0,3em;
+    padding: 0.3em;
+    border: 1px solid #fff;
+}
+
+article{
+    width: 25%;
+    margin: 0 1%;
+    padding: 0.5em 0.3em;
+    border: 0.1em solid #fff;
+}
+
+footer{
+    height: 7em;
+    background: #c90c0e;
+    padding: 0.8em 0;
+    color: #fff;
+}
+
+footer p{
+    text-align: center;
+}
+
+table{
+    width: 100%;
+    border-collapse: separate;
+}
+
+td, th{
+    border: 0.1em solid #000;
+}
+
+@media only screen and (max-width: 768px) {
+    /* For mobile phones: */
+    section, article, .logo, .logotipo {
+        width: 100%;
+        text-align: center;
+    }
+
+
+
+    nav a{
+        font-size: 0.7em;
+        width: 100%;
+    }
+}
