@@ -30,4 +30,6 @@ node_modules
 npm-debug.log
 
 # banco de dados do Mongo
-data
+data/*.*
+data/_tmp
+data/journal
